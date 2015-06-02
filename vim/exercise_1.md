@@ -41,7 +41,7 @@ Inserting text
 ```
 Navigate to the       and place the word 'blank' there.
 Using `A`, place the word that describes it's position at the
-the text 'Place' at the beginning of the line using `I`.
+the word 'Type' at the beginning of the line using `I`.
 ```
 
 
@@ -141,8 +141,9 @@ String substitution
 
 -   From normal mode, go into command mode by pressing `:`
 -   Command: `s/s/r` to replace 's' with 'r'
--   Command: `%s/s/r` to do it for every line in the file
--   Command: `s/s/r/g` to do it globally for this line
+-   Command: `%s/s/r` to do it for every line in the file, for the first s in
+    the line
+-   Command: `s/s/r/g` to do it for every 's' in this line
 -   Command: `s/s/r/gc` to do it globally for this line and ask for confirmation
 
 ```
