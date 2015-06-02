@@ -4,6 +4,9 @@
 \definecolor{cadet}{rgb}{0.33, 0.41, 0.47}
 \definecolor{coolblack}{rgb}{0.0, 0.18, 0.39}
 
+% good resource for themes / colors here:
+% http://www.deic.uab.es/~iblanes/beamer_gallery/
+
 \mode<presentation>
 {
     \usetheme{Szeged}      % or try Darmstadt, Madrid, Warsaw, ...
@@ -42,6 +45,26 @@
 \includegraphics[keepaspectratio=true,scale=0.35]{west-africa-distribution-map.eps}}
 \\
 \end{minipage}
+\end{frame}
+
+\begin{frame}{Columns!}
+
+    \begin{columns} % the "c" option specifies center vertical alignment
+        \begin{column}{.6\textwidth} % column designated by a command
+
+        \begin{itemize}
+          \item We can have stuff over here
+          \item We can choose the size of each column!
+        \end{itemize}
+
+        \end{column}
+        \begin{column}{.4\textwidth} % column designated by a command
+
+        \includegraphics[height=1.5in]{rover.png}
+
+        \end{column}
+    \end{columns}
+
 \end{frame}
 
 \begin{frame}{State Diagram}
