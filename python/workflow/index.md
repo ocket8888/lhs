@@ -25,7 +25,7 @@ use LaTeX is google: en.wikibooks.org/wiki/LaTeX/ is an excellent resource for
 basic issues, and StackExchange typically has solutions to any more advanced or
 specific questions.
 
-## LaTeX report template with BibTeX
+### LaTeX report template with BibTeX
 
 A skeleton report file is in `bibtex_file.tex`, which uses the BibTex file
 `bibtex_file.bib`. Each of these files are comprised of text, and are compiled
@@ -34,7 +34,7 @@ with LaTeX. The commands necessary to compile this article are in
 compile_article; ./compile_article) or you can type out each command in the bash
 script.
 
-## Beamer template
+### Beamer template
 
 Beamer is an open-source presentation software, which allows for LaTeX to be
 used as a presentation tool. An example presentation is `beamer_template.tex`,
