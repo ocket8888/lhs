@@ -34,11 +34,15 @@ with LaTeX. The commands necessary to compile this article are in
 compile_article; ./compile_article) or you can type out each command in the bash
 script.
 
+### LAIS paper example
+
+LaTeX is not only for scientific writing! `lais_example.tex` is an example of
+how to format some common elements of papers for your liberal arts classes.
+Using BibTex, as in the previous example, is useful for LAIS as well! You can
+usually export citations in the correct format from most academic journals.
+
 ### Beamer template
 
 Beamer is an open-source presentation software, which allows for LaTeX to be
 used as a presentation tool. An example presentation is `beamer_template.tex`,
 which can be compiled by executing `compile_beamer` in the same manner as above. 
-
-The magic of markdown and pandoc
---------------------------------
