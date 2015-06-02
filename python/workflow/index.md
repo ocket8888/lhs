@@ -2,7 +2,6 @@
 title: Efficient Workflow in Linux
 ...
 
-test line
 
 
 (Comprehensive) Intro to Vim
