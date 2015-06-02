@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+pdflatex bibtex_file
+bibtex bibtex_file
+pdflatex bibtex_file
+pdflatex bibtex_file
+

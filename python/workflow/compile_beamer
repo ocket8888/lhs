@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+pdflatex beamer_template.tex
+
