@@ -154,19 +154,16 @@ if __name__ == "__main__":
     x, xe, y, ye = import_from_csv(data_file)
 
     # define functions we want to fit to, and initial parameter guesses
-    ## (function, betas)
-    fits = [ (fsin, [5.0,0.5]) \
-           , (fexp, [2000.0,-0.2, 100.0]) \
+    ## (function to fit, initial beta estimates)
+    fits = [ (fsin, [5.0, 0.5]) \
+           , (fexp, [2000.0, -0.2, 100.0]) \
            , (fpoly, [1.0, 1.0, 1.0, 1.0]) \
            ]
-    fits = [ (fsin, [5.0,0.5]) \
-           , (fexp, [2000.0,-0.2, 100.0]) \
-           , (fpoly, [1.0, 1.0, 1.0, 1.0]) \
-           ]
-
-
-    # see what a difference your initial estimates make!
-    #ests = [[1.0,1.0],[1.0,1.0],[1.0, 1.0, 1.0, 1.0]]
+    ## see what a difference your initial estimates make!
+    fits2 = [ (fsin, [1.0, 1.0]) \
+            , (fexp, [1.0, 1.0, 1.0]) \
+            , (fpoly, [1.0, 1.0, 1.0, 1.0]) \
+            ]
 
     # do fit with all options, print results
     for (fit, est) in fits:
