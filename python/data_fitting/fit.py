@@ -119,6 +119,9 @@ def plot_fit(x, xe, y, ye, f, betas):
 # Analyze Fit
 # -----------
 
+# look under "regression analysis" on this link for definition:
+# "https://en.wikipedia.org/wiki/Goodness_of_fit"
+
 def chi2(x, xe, y, ye, model, betas):
 
     # Chi^2 Calculation
