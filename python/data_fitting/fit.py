@@ -154,18 +154,22 @@ if __name__ == "__main__":
     x, xe, y, ye = import_from_csv(data_file)
 
     # define functions we want to fit to, and initial parameter guesses
-    fits = [fsin, fexp, fpoly]
+    ## (function, betas)
+    fits = [ (fsin, [5.0,0.5]) \
+           , (fexp, [2000.0,-0.2, 100.0]) \
+           , (fpoly, [1.0, 1.0, 1.0, 1.0]) \
+           ]
+    fits = [ (fsin, [5.0,0.5]) \
+           , (fexp, [2000.0,-0.2, 100.0]) \
+           , (fpoly, [1.0, 1.0, 1.0, 1.0]) \
+           ]
 
-    sine_est = [5.0,0.5]
-    exp_est = [2000.0,-0.2, 100.0]
-    poly_est = [1.0, 1.0, 1.0, 1.0]
-    ests = [sine_est, exp_est, poly_est]
 
     # see what a difference your initial estimates make!
     #ests = [[1.0,1.0],[1.0,1.0],[1.0, 1.0, 1.0, 1.0]]
 
     # do fit with all options, print results
-    for (fit, est) in zip(fits, ests):
+    for (fit, est) in fits:
 
         result = do_odr(fit, x, xe, y, ye, est)
 

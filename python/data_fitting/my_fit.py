@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
+
 # Needed Modules
-# ================
+# ==============
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,6 +11,7 @@ import sys
 
 # documentation for the odrpack library can be found here:
 # "http://docs.scipy.org/doc/scipy/reference/odr.html#id1"
+
 
 # Functions to fit
 # ================
