@@ -28,6 +28,12 @@ def fpoly(B,x):
 
 def import_from_csv(data_file):
 
+    with open(data_file, "r") as f:
+
+        data = f
+
+    return x, xe, y, ye
+
 
 # Do fit
 # ======
@@ -50,7 +56,11 @@ def do_odr(f, x, xe, y, ye, estimates):
 # Plot - requires matplotlib
 # --------------------------
 
+# use plotting.py as a reference
+
 def plot_fit(x, xe, y, ye, f, betas):
+
+    plt.show()
 
 
 # Analyze Fit

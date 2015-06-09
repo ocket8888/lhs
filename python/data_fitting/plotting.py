@@ -24,8 +24,14 @@ plt.title('My Fancy Graph', fontsize = 20)
 # first numbers are location of text on graph
 plt.text(10, -1.1, r'$\rho = \frac{1}{\mu}$', fontsize = 16)
 
-plt.xlim(-1,22) # x-axis range
-plt.ylim(-1.5,1.5) # y-axis range
+# define ranges for axis
+plt.xlim(-1,22)
+plt.ylim(-1.5,1.5)
+
+#plt.errorbar(x, y, fmt = 'ro', xerr = xe, yerr = ye)
 
 plt.show()
-#plt.errorbar(x, y, fmt = 'ro', xerr = xe, yerr = ye)
+plt.savefig(f.__name__+'_plot.pdf', bbox_inches=0, dpi=600)
+
+# need to clear figure if we're going to make another graph in same program
+plt.clf()
