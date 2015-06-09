@@ -28,7 +28,7 @@ def fpoly(B,x):
 # Import data
 # ===========
 
-def import_from_csv(data_file, strip_header = False):
+def import_from_csv(data_file):
 
     x = []
     x_err = []
@@ -40,31 +40,29 @@ def import_from_csv(data_file, strip_header = False):
         # need to remove newlines and commas (for CSVs)
         data = np.array([line.rstrip().split(", ") for line in f])
 
-        # if len 4, assume data in [x, x_err, y, y_err] format
-        # otherwise transpose
-        # in general, nested if statements are terrible, don't do this
+    # if len 4, assume data in [x, x_err, y, y_err] format
+    # otherwise transpose
+    # in general, nested if statements are terrible, don't do this
+    if len(data) != 4:
+        data = np.transpose(data)
         if len(data) != 4:
-            data = np.transpose(data)
-            if len(data) != 4:
-                print("data not in correct format")
-                sys.exit()
+            print("data not in correct format")
+            sys.exit()
 
-        # cast to float for computation (copies array)
-        try:
-            data = data.astype(float)
-        except:
-            print(data)
-            data = np.array([row[1:] for row in data])
-            data = data.astype(float)
-
-
-
-        x = data[0]
-        x_err = data[1]
-        y = data[2]
-        y_err = data[3]
+    # cast to float for computation (copies array)
+    try:
+        data = data.astype(float)
 
     # delete first line (optional, only do this to get rid of headers)
+    except:
+        data = np.array([row[1:] for row in data])
+        data = data.astype(float)
+
+    x = data[0]
+    x_err = data[1]
+    y = data[2]
+    y_err = data[3]
+
 
     return x, x_err, y, y_err
 
@@ -78,8 +76,6 @@ def do_odr(f, x, xe, y, ye, estimates):
 
     # sx and sy should be the covariances
     data = odrpack.RealData(x, y, sx=xe, sy=ye)
-
-    #odr = odrpack.ODR(data, model, beta0=[0., 0., 0.])
 
     # need to hard-code in estimates for parameters
     odr = odrpack.ODR(data, model, estimates)
@@ -150,10 +146,11 @@ if __name__ == "__main__":
 
     if len(sys.argv) != 2:
         print("Need to supply input file as first argument")
+
     data_file = sys.argv[1]
     x, xe, y, ye = import_from_csv(data_file)
 
-# define functions we want to fit to, and initial parameter guesses
+    # define functions we want to fit to, and initial parameter guesses
     fits = [fsin, fexp, fpoly]
 
     sine_est = [5.0,0.5]
@@ -164,7 +161,7 @@ if __name__ == "__main__":
     # see what a difference your initial estimates make!
     #ests = [[1.0,1.0],[1.0,1.0],[1.0, 1.0, 1.0, 1.0]]
 
-# do fit with all options, print results
+    # do fit with all options, print results
     for (fit, est) in zip(fits, ests):
 
         result = do_odr(fit, x, xe, y, ye, est)
