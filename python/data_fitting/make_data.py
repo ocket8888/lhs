@@ -16,6 +16,9 @@ def my_sine(x):
 def add_rand(x, err_range = 1):
     return x + random.uniform(-err_range,err_range)
 
+def exp(x):
+    return 1000*math.exp(-0.5*x)
+
 # Generate data
 # -------------
 
@@ -44,10 +47,11 @@ def write_data (name, x, x_err, y, y_err):
         for (xi,xe,yi,ye) in zip(x, x_err, y, y_err):
             fo.write(str(xi) +", "+ str(xe) +", "+ str(yi) +", "+ str(ye) +"\n")
 
+
 # Running this file generates data for a couple different curves
 if __name__ == "__main__":
 
-    curves = [math.exp, math.sin, my_sine]
+    curves = [exp, my_sine]
 
     for c in curves:
         x, xe, y, ye = gen_dat(c)
