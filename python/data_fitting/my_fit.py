@@ -32,7 +32,7 @@ def import_from_csv(data_file):
 
     with open(data_file, "r") as f:
 
-        data = f
+        data = f.readlines()
 
     return x, xe, y, ye
 

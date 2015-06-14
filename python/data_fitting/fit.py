@@ -37,32 +37,16 @@ def import_from_csv(data_file):
 
     with open(data_file, "r") as f:
 
-        # need to remove newlines and commas (for CSVs)
-        data = np.array([line.rstrip().split(", ") for line in f])
-
-    # if len 4, assume data in [x, x_err, y, y_err] format
-    # otherwise transpose
-    # in general, nested if statements are terrible, don't do this
-    if len(data) != 4:
-        data = np.transpose(data)
-        if len(data) != 4:
-            print("data not in correct format")
-            sys.exit()
+        header = f.readline()
+        data = [[elem for elem in line.split(", ")] for line in f.readlines()]
 
     # cast to float for computation (copies array)
-    try:
-        data = data.astype(float)
-
-    # delete first line (optional, only do this to get rid of headers)
-    except:
-        data = np.array([row[1:] for row in data])
-        data = data.astype(float)
+    data = np.array(data).astype(float)
 
     x = data[0]
     x_err = data[1]
     y = data[2]
     y_err = data[3]
-
 
     return x, x_err, y, y_err
 
