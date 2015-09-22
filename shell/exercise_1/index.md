@@ -2,8 +2,8 @@
 title: Bash Shell Excercise 1
 ...
 
-Try these exercises out using files from this directory. Have this guide open in
-a separate window so you can follow along.
+Try these excercises out using files from this directory. Have this guide open
+in a separate window so you can follow along.
 
 
 Othello's Lines
@@ -144,13 +144,14 @@ To show only the last two 'Reduced Chai Values', pipe the output of `grep` into
 `tail`, and tell `tail` to only output the last 6 lines with the '-n' option.
 
 ```bash
-% grep -A 1 'Final Energy Values' data_file.csv | tail -n 6
+  % grep -A 1 'Reduced Chai Values' data_file.csv | tail -n 6
     --
-    Final Energy Values:
-    12412807, 1170828, 5338510, 9964010
+    Reduced Chai Values:
+    1056171, 5042308, 4669985, 10144310
     --
-    Final Energy Values:
-    11752080, 1137775, 6640678, 7974974
+    Reduced Chai Values:
+    9074041, 6222272, 14989142, 5701998
+
 ```
 
 Use the '-c' option for `grep` to count the data lines, coupled with the '-v'
