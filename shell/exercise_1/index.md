@@ -2,8 +2,8 @@
 title: Bash Shell Excercise 1
 ...
 
-Try these excercises out using files from this directory. Have this guide open
-in a separate window so you can follow along.
+Try these exercises out using files from this directory. Have this guide open in
+a separate window so you can follow along.
 
 
 Othello's Lines
