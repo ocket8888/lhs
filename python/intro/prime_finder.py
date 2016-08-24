@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # This program runs as ./prime_finder (with correct permissions), but
 # incorrectly! The program's goal is to list the prime numbers below a certain
 # number using the Sieve of Eratosthenes, discovered around 200 BC.
