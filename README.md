@@ -1,5 +1,5 @@
-Physics Help Session
-====================
+Linux Help Session
+==================
 
 Here are some guides (and other useful things) for Linux. Let me know if you
 want to contribute to them.
